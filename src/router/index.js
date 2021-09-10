@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import ScooterTier from "../views/ScooterTier.vue"
 
 Vue.use(VueRouter)
 
@@ -9,7 +10,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/scooter/tier',
+    name: 'Scooter_Tier',
+    component: ScooterTier
   }
+
 ]
 
 const router = new VueRouter({

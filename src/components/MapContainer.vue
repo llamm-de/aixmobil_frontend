@@ -20,6 +20,9 @@ export default {
     LTileLayer,
     LMarker,
   },
+  props: {
+    marker_list: Array,
+  },
   data() {
     return {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -27,10 +30,6 @@ export default {
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 14,
       center: [50.775555, 6.083611],
-      marker_list: [
-        { id: "m1", longlat: [50.775555, 6.083611] },
-        { id: "m2", longlat: [50.775555, 6.082011] },
-      ],
     };
   },
   mounted() {

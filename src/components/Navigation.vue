@@ -100,13 +100,13 @@ export default {
     return {
       drawer: false,
       scooter_links: [
-        { text: "Voi", route: "/" },
-        { text: "Tier", route: "/" },
-        { text: "Lime", route: "/" },
-        { text: "Dott", route: "/" },
+        { text: "Tier", route: "/scooter/tier" },
+        { text: "Voi", route: "/scooter/voi" },
+        { text: "Lime", route: "/scooter/lime" },
+        { text: "Dott", route: "/scooter/dott" },
       ],
-      bike_links: [{ text: "Velocity", route: "/" }],
-      car_links: [{ text: "Cambio", route: "/" }],
+      bike_links: [{ text: "Velocity", route: "/bike/velocity" }],
+      car_links: [{ text: "Cambio", route: "/car/cambio" }],
     };
   },
 };
