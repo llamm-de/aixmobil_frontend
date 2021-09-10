@@ -89,6 +89,50 @@
           }}</v-list-item-title>
         </v-list-item>
       </v-list>
+
+      <!-- Bus -->
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item>
+          <v-list-item-title class="text-subtitle-2">Bus</v-list-item-title>
+        </v-list-item>
+        <v-list-item
+          link
+          router
+          :to="link.route"
+          v-for="link in bus_links"
+          :key="link.text"
+        >
+          <v-list-item-icon>
+            <v-icon class="large">mdi-bus</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="text-subtitle-1">{{
+            link.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+
+      <!-- Parken -->
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item>
+          <v-list-item-title class="text-subtitle-2">Parken</v-list-item-title>
+        </v-list-item>
+        <v-list-item
+          link
+          router
+          :to="link.route"
+          v-for="link in park_links"
+          :key="link.text"
+        >
+          <v-list-item-icon>
+            <v-icon class="large">mdi-parking</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="text-subtitle-1">{{
+            link.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -107,6 +151,8 @@ export default {
       ],
       bike_links: [{ text: "Velocity", route: "/bike/velocity" }],
       car_links: [{ text: "Cambio", route: "/car/cambio" }],
+      bus_links: [{ text: "Aseag", route: "/bus/aseag" }],
+      park_links: [{ text: "Apag", route: "/parking/" }],
     };
   },
 };
