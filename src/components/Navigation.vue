@@ -11,7 +11,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/llamm-de/aachen_mobil_frontend"
+        href="https://github.com/llamm-de/aixmobil_frontend"
         target="_blank"
         text
       >
@@ -22,19 +22,71 @@
     <!-- Drawer side menu -->
 
     <v-navigation-drawer clipped class="grey lighten-3" v-model="drawer" app>
+      <!-- E-Scooter -->
       <v-divider></v-divider>
       <v-list nav dense>
+        <v-list-item>
+          <v-list-item-title class="text-subtitle-2">Scooter</v-list-item-title>
+        </v-list-item>
         <v-list-item
           link
           router
           :to="link.route"
-          v-for="link in drawer_links"
+          v-for="link in scooter_links"
           :key="link.text"
         >
           <v-list-item-icon>
-            <v-icon class="large">{{ link.icon }}</v-icon>
+            <v-icon class="large">mdi-scooter-electric</v-icon>
           </v-list-item-icon>
-          <v-list-item-title class="text-h6">{{ link.text }}</v-list-item-title>
+          <v-list-item-title class="text-subtitle-1">{{
+            link.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+
+      <!-- E-Bikes -->
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item>
+          <v-list-item-title class="text-subtitle-2">E-Bike</v-list-item-title>
+        </v-list-item>
+        <v-list-item
+          link
+          router
+          :to="link.route"
+          v-for="link in bike_links"
+          :key="link.text"
+        >
+          <v-list-item-icon>
+            <v-icon class="large">mdi-bicycle-electric</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="text-subtitle-1">{{
+            link.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+
+      <!-- Carsharing -->
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item>
+          <v-list-item-title class="text-subtitle-2"
+            >Carsharing</v-list-item-title
+          >
+        </v-list-item>
+        <v-list-item
+          link
+          router
+          :to="link.route"
+          v-for="link in car_links"
+          :key="link.text"
+        >
+          <v-list-item-icon>
+            <v-icon class="large">mdi-car</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title class="text-subtitle-1">{{
+            link.text
+          }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -47,10 +99,14 @@ export default {
   data() {
     return {
       drawer: false,
-      drawer_links: [
-        { icon: "mdi-school", text: "VOI", route: "/studentlist" },
-        { icon: "mdi-home", text: "TIER", route: "/rooms" },
+      scooter_links: [
+        { text: "Voi", route: "/" },
+        { text: "Tier", route: "/" },
+        { text: "Lime", route: "/" },
+        { text: "Dott", route: "/" },
       ],
+      bike_links: [{ text: "Velocity", route: "/" }],
+      car_links: [{ text: "Cambio", route: "/" }],
     };
   },
 };

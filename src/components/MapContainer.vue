@@ -1,7 +1,11 @@
 <template>
-  <l-map style="height: 100%" :zoom="zoom" :center="center">
+  <l-map style="height: 100%; z-index: 0" :zoom="zoom" :center="center">
     <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    <l-marker v-if="markerLatLng" :lat-lng="markerLatLng"></l-marker>
+    <l-marker
+      v-for="marker in marker_list"
+      :lat-lng="marker.longlat"
+      :key="marker.id"
+    ></l-marker>
   </l-map>
 </template>
 
@@ -23,7 +27,10 @@ export default {
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 14,
       center: [50.775555, 6.083611],
-      markerLatLng: null,
+      marker_list: [
+        { id: "m1", longlat: [50.775555, 6.083611] },
+        { id: "m2", longlat: [50.775555, 6.082011] },
+      ],
     };
   },
   mounted() {
