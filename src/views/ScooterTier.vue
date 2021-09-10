@@ -19,5 +19,23 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.fetchData().then((data) => {
+      console.log(data);
+    });
+  },
+  methods: {
+    async fetchData(
+      url = "https://platform.tier-services.io/v1/vehicle?zoneId=AACHEN"
+    ) {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "X-Api-Key": "bpEUTJEBTf74oGRWxaIcW7aeZMzDDODe1yBoSxi2",
+        },
+      });
+      return response.json();
+    },
+  },
 };
 </script>
